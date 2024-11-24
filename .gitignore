@@ -1,0 +1,5 @@
+csid.json
+package-lock.json
+*.txt
+*.pem
+node_modules
