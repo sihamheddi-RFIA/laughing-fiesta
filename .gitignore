@@ -2,4 +2,6 @@ csid.json
 package-lock.json
 *.txt
 *.pem
+*.csr
+*.xml
 node_modules
