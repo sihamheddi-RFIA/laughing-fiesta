@@ -4,4 +4,5 @@ package-lock.json
 *.pem
 *.csr
 *.xml
+*.cnf
 node_modules
