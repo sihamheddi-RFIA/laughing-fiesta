@@ -1,4 +1,4 @@
-// encode csr to base64
+const { execSync } = require("child_process");
 const fs = require("fs");
 
 function encodeBase64(filePath) {
@@ -23,5 +23,13 @@ function encodeBase64(filePath) {
   });
 }
 
-const encodedContent = encodeBase64("taxpayer.csr");
-console.log(encodedContent);
+try {
+  execSync(
+    "fatoora -csr -csrConfig ./example.properties -privateKey privateKey.pem -generatedCsr taxpayer.csr"
+  );
+
+  const encodedContent = encodeBase64("taxpayer.csr");
+  console.log(encodedContent);
+} catch (error) {
+  console.error(error);
+}

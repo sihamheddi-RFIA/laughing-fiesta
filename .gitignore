@@ -6,3 +6,5 @@ package-lock.json
 *.xml
 *.cnf
 node_modules
+zatca-*
+*.properties

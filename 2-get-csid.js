@@ -27,7 +27,7 @@ function getCSID(csr, otp) {
     });
 }
 
-const csr = fs.readFileSync("taxpayer_base64.txt").toString();
+const csr = fs.readFileSync("taxpayer.csr").toString();
 
 const otp = "123345";
 
