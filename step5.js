@@ -3,7 +3,7 @@ const crypto = require("crypto");
 const fs = require("fs");
 
 const hash = crypto.createHash("sha256");
-const xmlFile = fs.readFileSync("canonicalised.xml", "utf8");
+const xmlFile = fs.readFileSync("invoice0.xml", "utf8");
 
 const hashedInvoice = hash.update(xmlFile).digest("hex");
 fs.writeFileSync("hash.txt", hashedInvoice);

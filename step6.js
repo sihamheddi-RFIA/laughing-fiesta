@@ -6,10 +6,13 @@
 const crypto = require("crypto");
 const fs = require("fs");
 
-const privateKey = fs.readFileSync("PrivateKey.pem", "utf8");
-const hashedInvoice = fs.readFileSync("hash.txt", "utf8");
+const privateKey = fs.readFileSync("PrivateKey.pem").toString();
+const hashedInvoice = fs.readFileSync("hash.txt").toString();
 
-const signature = crypto.sign("sha256", hashedInvoice, privateKey);
+const sign = crypto.createSign("SHA256");
+sign.write(hashedInvoice);
+sign.end();
+const signature = sign.sign(privateKey, "base64");
 
 fs.writeFileSync("invoice_signature.txt", signature);
 

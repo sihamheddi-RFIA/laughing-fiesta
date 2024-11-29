@@ -2,7 +2,7 @@ var xmldom = require("xmldom");
 var c14n = require("xml-c14n")();
 var fs = require("fs");
 
-var xmlData = fs.readFileSync("invoice.xml", "utf8"),
+var xmlData = fs.readFileSync("invoice0.xml", "utf8"),
   document = new xmldom.DOMParser().parseFromString(xmlData);
 
 var canonicaliser = c14n.createCanonicaliser(
